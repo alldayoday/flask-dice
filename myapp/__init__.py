@@ -41,8 +41,7 @@ login_manager.login_view = 'users.login'
 
 # Registering Blueprints - 
 
-from myapp.core.views import core 
-app.register_blueprint(core)
+
 
 #linking the 404 and 403 error pages into the app 
 from myapp.error_pages.handlers import error_pages
