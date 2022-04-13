@@ -11,13 +11,14 @@
                 <h2 class="card-title" href="{{url_for('dice_posts.dice_post', dice_post_id=post.id)}}">{{post.link}}
                 </h2>
                 {% if post.author == current_user %}
-                <div id="cardBtns">
-                <a id="update" class="btn btn-secondary" href="{{ url_for('dice_posts.update', dice_post_id=post.id) }}">Update</a>
-                <form action="{{ url_for('dice_posts.delete_post', dice_post_id=post.id) }}" method="POST">
-                    <input id="delete" class="btn btn-danger" type="submit" value="Delete">
-                </form>
+                <div id="cardBtns"  class="card-body">
+                    <a id="update" class="btn btn-secondary"
+                        href="{{ url_for('dice_posts.update', dice_post_id=post.id) }}">Update</a>
+                    <form action="{{ url_for('dice_posts.delete_post', dice_post_id=post.id) }}" method="POST">
+                        <input id="delete" class="btn btn-danger" type="submit" value="Delete">
+                    </form>
                 </div>
-            {% endif %}
+                {% endif %}
             </div>
         </div>
         {% endfor %}

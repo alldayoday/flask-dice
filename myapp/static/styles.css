@@ -34,22 +34,19 @@ h1,h3,h4{
 }
 
 #cardBtns{
-  display: inline-flex;
+  display: flex;
+  margin-top: 20px;
 }
 
 #update{
-  width: fit-content;
   background-color: #e002d8;
   border: none;
-  margin: 20px;
   height: fit-content;
 }
 
 #delete{
   background-color: rgb(169, 2, 2);
   border: 2px solid rgb(169, 2, 2);
-  margin: 20px;
-  width: fit-content;
   color: antiquewhite;
 }
 
