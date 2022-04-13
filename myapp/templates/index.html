@@ -8,7 +8,7 @@
         {% for post in dice_posts.items %}
         <div id="burn" class="card">
             <div class="card-body">
-                <h2 class="card-title" href="{{url_for('dice_posts.dice_post', dice_post_id=post.id)}}">{{post.link}}
+                <h2 id="burnBody" class="card-title" href="{{url_for('dice_posts.dice_post', dice_post_id=post.id)}}">{{post.link}}
                 </h2>
                 {% if post.author == current_user %}
                 <div id="cardBtns"  class="card-body">

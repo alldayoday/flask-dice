@@ -32,6 +32,7 @@ h1,h3,h4{
   background-color: transparent;
   border: none;
   font-family: 'Indie Flower', cursive;
+
 }
 
 #cardBtns{
@@ -54,4 +55,8 @@ h1,h3,h4{
 form{
   font-family: 'Indie Flower', cursive;
   margin-top: 50px;
+}
+
+#burnBody{
+  margin-top: 10px;
 }
