@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <div align="center">
+            <h1>Welcome to the page for {{user.username}}</h1>
+        </div>
+    </div>
+    <div id="burns" class="container">
+        <divc class="row ">
+            {% for post in dice_posts.items %}
+            <div id="burn" class="card">
+                <div class="card-body">
+                    <h2 class="card-title" href="{{url_for('dice_posts.dice_post', dice_post_id=post.id)}}">
+                        {{post.link}}
+                    </h2>
+                    {% if post.author == current_user %}
+                    <div id="cardBtns">
+                        <a id="update" class="btn btn-secondary"
+                            href="{{ url_for('dice_posts.update', dice_post_id=post.id) }}">Update</a>
+                        <form action="{{ url_for('dice_posts.delete_post', dice_post_id=post.id) }}" method="POST">
+                            <input id="delete" class="btn btn-danger" type="submit" value="Delete">
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+</div>
+
+<nav aria-label="Page Navigation example">
+    <ul class="pagination justify-content-center">
+
+        {% for page_num in dice_posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+        {% if dice_posts.page == page_num %}
+        <li class="page-item disabled">
+            <a class="page-link" href="{{url_for('users.user_posts', username=user.username, page=page_num)}}">{{
+                page_num }}</a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link" href="{{url_for('users.user_posts', username=user.username, page=page_num)}}">{{
+                page_num }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
+
+
+{% endblock %}

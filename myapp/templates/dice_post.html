@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h2>Owned by: {{post.author.username}}</h2>
+  <h3>Published: {{ post.date.strftime('%B %d, %Y') }}</h3>
+  <!-- <img src="{{post.link}}" alt="dice"> -->
+  <img src="{{url_for(post.link)}}">
+  {% if post.author == current_user %}
+    <div>
+      <a class="btn btn-secondary" href="{{ url_for('dice_posts.update', dice_post_id=post.id) }}">Update</a>
+      <br>
+      <form action="{{ url_for('dice_posts.delete_post', dice_post_id=post.id) }}" method="POST">
+        <input class="btn btn-danger" type="submit" value="Delete">
+      </form>
+    </div>
+  {% endif %}
+</div>
+{% endblock content %}
