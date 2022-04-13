@@ -40,7 +40,7 @@ def update(dice_post_id):
         dice_post.link = form.link.data
         db.session.commit()
         flash('Dice Post Updated')
-        return redirect(url_for('dice_posts.dice_post',dice_post_id=dice_post.id))
+        return redirect(url_for('core.index'))
 
     elif request.method == 'GET':
         form.link.data = dice_post.link
