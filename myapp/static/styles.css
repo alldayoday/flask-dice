@@ -42,6 +42,7 @@ h1,h3,h4{
   background-color: #e002d8;
   border: none;
   margin: 20px;
+  height: fit-content;
 }
 
 #delete{
@@ -50,4 +51,9 @@ h1,h3,h4{
   margin: 20px;
   width: fit-content;
   color: antiquewhite;
+}
+
+form{
+  font-family: 'Indie Flower', cursive;
+  margin-top: 50px;
 }
