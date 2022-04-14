@@ -24,8 +24,8 @@ h1,h3,h4{
 
 #burn{
   margin: 8px;
-  height: 20rem;
-  width: 20rem;
+  height: 22rem;
+  width: 22rem;
   background-image: url('/static/burn.png');
   background-position:center;
   background-size: cover;
@@ -61,6 +61,3 @@ form{
   margin-top: 10px;
 }
 
-#burns{
-  margin:0 auto;
-}
