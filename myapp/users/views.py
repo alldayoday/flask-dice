@@ -80,6 +80,6 @@ from myapp.models import User, DicePost
 def user_posts(username):
     page = request.args.get('page', 1, type=int)
     user = User.query.filter_by(username=username).first_or_404()
-    dice_posts = DicePost.query.filter_by(author=user).order_by(DicePost.date.desc()).paginate(page=page, per_page=6) 
+    dice_posts = DicePost.query.filter_by(author=user).order_by(DicePost.date.desc()).paginate(page=page, per_page=5) 
     return render_template('user_dice_posts.html', dice_posts=dice_posts, user=user)
 
