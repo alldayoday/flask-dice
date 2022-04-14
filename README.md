@@ -1,0 +1,1 @@
+This started as a rep of classwork, and ended as a joke project of a Mean Girls style burn book for my classmates.
